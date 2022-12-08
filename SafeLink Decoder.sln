@@ -8,25 +8,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\JS\SLD-injector.user.js = ..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\JS\SLD-injector.user.js
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "sldecode", "..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\sldecode\", "{8A125A7D-A064-4D55-A030-BF9AB101DC70}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SafeLink Decoder", ".", "{E9E67AB3-B72B-40C2-89D6-38E545AAF92E}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_59419"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\sldecode\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59419\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62418"
+		Debug.AspNetCompiler.PhysicalPath = "..\SafeLink Decoder\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62418\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_59419"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\sldecode\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59419\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62418"
+		Release.AspNetCompiler.PhysicalPath = "..\SafeLink Decoder\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62418\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "59419"
-		SlnRelativePath = "..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\sldecode\"
+		VWDPort = "62418"
 	EndProjectSection
 EndProject
 Global
@@ -34,14 +33,14 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A125A7D-A064-4D55-A030-BF9AB101DC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A125A7D-A064-4D55-A030-BF9AB101DC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E67AB3-B72B-40C2-89D6-38E545AAF92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E67AB3-B72B-40C2-89D6-38E545AAF92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8A125A7D-A064-4D55-A030-BF9AB101DC70} = {A5C4FBF5-B221-4FEA-B5F1-753620C26A0C}
+		{E9E67AB3-B72B-40C2-89D6-38E545AAF92E} = {A5C4FBF5-B221-4FEA-B5F1-753620C26A0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {26C94574-B304-4690-BE83-6FD7C985E206}

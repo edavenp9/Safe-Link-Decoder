@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<!-- Created by Ethan Davenport / 2022-05-18 -->
+<!-- Last updated 2022-12-08 -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Safe Link Decoder</title>
+    <script src="SafeLinks_Decoder.js"></script>
+    <link rel="stylesheet" href="SafeLink_Decoder.css" />
+</head>
+<body>
+    <noscript>Warning: JavaScript is required for this page to function.</noscript>
+    <div id="main-content">
+        <h1 id="main-heading">Safe Link Decoder</h1>
+        <label for="input-box">Paste one or more Safe Links to decode in the text box below. Results should appear automatically, but you can also press the "Decode" button.</label>
+        <p>TIP: Processing multiple links? Separate them with commas, double/single quotes, spaces, or new lines.</p>
+        <p style="color:steelblue">Found a bug? Please report to Ethan Davenport [edavenp9 (at) utk (dot) edu] via Teams or email. Thanks!</p>
+        <textarea id="input-box" autofocus spellcheck="false"></textarea>
+        <div id="buttons-div">
+            <button id="run-button" type="button">Decode</button>
+            <button id="clear-button" type="reset">Clear</button>
+        </div>
+        <hr />
+        <div id="output">
+            <h2 id="results-header" class="dimResults">Results will appear below.</h2>
+            <ol id="results-list"></ol>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const inBox = document.getElementById('input-box');
+    const runButton = document.getElementById('run-button');
+    const resultHead = document.getElementById('results-header');
+    const resultList = document.getElementById('results-list');
+    const clearButton = document.getElementById('clear-button');
+
+    runButton.addEventListener('click', decodeHandler, false);
+    inBox.addEventListener('input', decodeHandler, false);
+    clearButton.addEventListener('click', function () {
+        if (window.confirm('Are you sure you want to clear all input?')) {
+            inBox.value = '';
+            resultHead.textContent = 'Results will appear below.';
+            resultHead.className = 'dimResults';
+            resultList.replaceChildren(); // Delete all child objects from result list, emptying it
+        }
+    }, false);
+
+    function decodeHandler() {
+        const results = decodeSafeLink(inBox.value, 2); // Run decode on the Safe Links in the input box, force array return mode
+
+        resultList.replaceChildren(); // Delete all child objects from result list, emptying it
+
+        if (results === null || results.length === 0) {
+            resultHead.className = 'noResults';
+            resultHead.textContent = 'No results found.'
+            return;
+        }
+
+        resultHead.className = '';
+        if (results.length > 1) resultHead.textContent = results.length.toString() + ' results:';
+        else resultHead.textContent = '1 result:';
+
+        for (const res of results) {
+            const newItem = document.createElement('li');
+            newItem.textContent = res;
+            resultList.appendChild(newItem);
+        }
+    }
+</script>
