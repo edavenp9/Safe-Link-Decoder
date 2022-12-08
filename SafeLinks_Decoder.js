@@ -1,6 +1,5 @@
 // Safe Link Decoder
-// Created 2022-05-06
-// Version 1.0.2 - 2022-07-07
+// Version 1.0.2
 // Ethan Davenport [edavenp9 (at) utk (dot) edu]
 
 // Regular Expression (to be used in decodeSafeLink())
