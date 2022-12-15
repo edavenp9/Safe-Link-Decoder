@@ -1,6 +1,6 @@
 // Safe Link Decoder
 // Version 1.0.2
-// Ethan Davenport [edavenp9 (at) utk (dot) edu]
+// https://github.com/edavenp9/Safe-Link-Decoder
 
 // Regular Expression (to be used in decodeSafeLink())
 // NOTE: Requires positive lookbehind support in browser
