@@ -1,5 +1,5 @@
 // Safe Link Decoder
-// Version 1.0.2
+// Version 1.0.3
 // https://github.com/edavenp9/Safe-Link-Decoder
 
 // Regular Expression (to be used in decodeSafeLink())

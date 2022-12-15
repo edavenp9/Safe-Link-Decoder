@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5C4FBF5-B221-4FEA-B5F1-753620C26A0C}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\JS\SLD-injector.user.js = ..\..\..\OneDrive - University of Tennessee\OIT HelpDesk\Dev\JS\SLD-injector.user.js
-	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SafeLink Decoder", ".", "{E9E67AB3-B72B-40C2-89D6-38E545AAF92E}"
 	ProjectSection(WebsiteProperties) = preProject
