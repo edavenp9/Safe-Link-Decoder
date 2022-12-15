@@ -1,5 +1,5 @@
 // Safe Link Decoder
-// Version 1.0.3
+// Version 1.1.0
 // https://github.com/edavenp9/Safe-Link-Decoder
 
 // Regular Expression (to be used in decodeSafeLink())
@@ -7,7 +7,7 @@
 // Matches the (encoded) original URL in one or more SafeLinks
 // If matching multiple Safe Links, separate individual URLs using newlines, whitespace, commas, single/double quotes, or any combination thereof.
 // Shortest possible match: "http://nam1.safelinks.protection.outlook.com/?url=http%3A%2F%2Fa.b&data=a"
-const findInnerSafelinks = /(?<=https?:\/\/nam\d+\.safelinks\.protection\.outlook\.com[\w\/%~-]*?\/\?url=)https?%3A%2F%2F[\w%~-]+(?:\.[\w%~-]+)+(?=&(?:amp;)?data=[\w%\.-]+(?:&(?:amp;)?sdata=[\w%\.-]+)?(?:&(?:amp;)?reserved=\d+)?[\s,'"]*)/g;
+const findInnerSafelinks = /(?<=https?:\/\/nam\d+\.safelinks\.protection\.outlook\.com[\w\/%~-]*?\/\?url=)https?%3A%2F%2F[\w%~!-]+(?:\.[\w%~!-]+)+(?=&(?:amp;)?data=[\w%\.-]+(?:&(?:amp;)?sdata=[\w%\.-]+)?(?:&(?:amp;)?reserved=\d+)?[\s,'"]*)/g;
 
 function decodeSafeLink(badLinks, returnMode) {
 	"use strict";
