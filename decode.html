@@ -1,20 +1,20 @@
 ﻿<!DOCTYPE html>
-<!-- Version 1.0.3 -->
+<!-- Version 1.1 -->
 <!-- https://github.com/edavenp9/Safe-Link-Decoder -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>Safe Link Decoder</title>
-    <script src="Safe_Link_Decoder.js"></script>
     <link rel="stylesheet" href="Safe_Link_Decoder.css" />
 </head>
 <body>
     <noscript>Warning: JavaScript is required for this page to function.</noscript>
     <div id="main-content">
         <h1 id="main-heading">Safe Link Decoder</h1>
+        <p id="version-num">Version 1.1</p>
         <label for="input-box">Paste one or more Safe Links to decode in the text box below. Results should appear automatically, but you can also press the "Decode" button.</label>
         <p>TIP: Processing multiple links? Separate them with commas, double/single quotes, spaces, or new lines.</p>
-        <p style="color:steelblue">Found a bug? Please <a href="https://github.com/edavenp9/Safe-Link-Decoder/issues" style="color:lightsteelblue">report an issue on GitHub</a>. Thanks!</p>
+        <p style="color:steelblue">Found a bug? Please <a href="https://github.com/edavenp9/Safe-Link-Decoder/issues" style="color:steelblue">report an issue on GitHub</a>. Thanks!</p>
         <textarea id="input-box" autofocus spellcheck="false"></textarea>
         <div id="buttons-div">
             <button id="run-button" type="button">Decode</button>
@@ -30,12 +30,17 @@
 </html>
 
 <script>
+    // Import main decoder script
+    import decode from './Safe_Link_Decoder.js';
+
+    // Save references to necessary DOM elements
     const inBox = document.getElementById('input-box');
     const runButton = document.getElementById('run-button');
     const resultHead = document.getElementById('results-header');
     const resultList = document.getElementById('results-list');
     const clearButton = document.getElementById('clear-button');
 
+    // Set up event listeners for buttons and textbox
     runButton.addEventListener('click', decodeHandler, false);
     inBox.addEventListener('input', decodeHandler, false);
     clearButton.addEventListener('click', function () {
@@ -43,25 +48,30 @@
             inBox.value = '';
             resultHead.textContent = 'Results will appear below.';
             resultHead.className = 'dimResults';
-            resultList.replaceChildren(); // Delete all child objects from result list, emptying it
+            resultList.replaceChildren(); // Delete all child objects from result list, emptying it.
         }
     }, false);
 
     function decodeHandler() {
-        const results = decodeSafeLink(inBox.value, 2); // Run decode on the Safe Links in the input box, force array return mode
+        const results = decode(inBox.value); // Run decode on the Safe Links in the input box.
 
-        resultList.replaceChildren(); // Delete all child objects from result list, emptying it
+        resultList.replaceChildren(); // Delete all child objects from result list, emptying it.
 
-        if (results === null || results.length === 0) {
+        // If there were no results, set formatting and display message.
+        if (results.length === 0) {
             resultHead.className = 'noResults';
             resultHead.textContent = 'No results found.'
             return;
         }
 
+        // Clear any existing classes set on the result header.
         resultHead.className = '';
+
+        // Formatting for result count.
         if (results.length > 1) resultHead.textContent = results.length.toString() + ' results:';
         else resultHead.textContent = '1 result:';
 
+        // For all results, create a new list item and add it to the list of results.
         for (const res of results) {
             const newItem = document.createElement('li');
             newItem.textContent = res;
